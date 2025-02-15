@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+<!-- 
+	PgP 7/5/2022 adding back form and report exercises 
+-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
+	<script src="../constants.js"></script>
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS462Summative03</title>
+</head>
+
+<body class="container-fluid" onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">Data Analysis & Business Modeling<br />
+            Chapters 20 to 27 and 35</h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative03" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			1050 Points
+           
+			<hr />
+		</div>
+
+
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+
+
+			<p>After completing this assignment you will be able to <strong>use</strong> a spreadsheet application to</p>
+			<ul>
+				<li>cells </li>
+                <li>arrays</li>
+			</ul>
+			<p>The exercises in this assignment should be done in the order presented.</p>
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+		<div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+		<hr />
+
+		<div id="Overview" class="collapse in  col-lg-12">
+    Do all of these problems in a single Excel Workbook.<br>
+    Solve each problem on a separate Worksheet.<br>
+    Your Excel File must be setup like you did in Formative01 with appropriate-Worksheet tab names like Ch22P3<br />
+                     <br>
+			<p>
+				Create and Save your work in an Excel file '<strong>Summative03.xlsx</strong>' in your 
+               
+				<code><span id="iPath"></span></code>
+				<script>document.getElementById("iPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+		</div>
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercises</a></div>
+        <p>&nbsp;</p>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+
+  <p align="left">Counting Cells-Chapter 20 Problem 7</p>
+<p align="left">Refer to the file Rock.xlsx </p>
+<div class="Section115">
+  <p><span class="style2"><strong>(50) 1. For the cell range D4:G15, count the cells containing a numeric value.</strong></span><br />
+    <span class="normal"><font color="#0000FF">
+      <textarea name="q1" cols="120" rows="3">Number numeric cells:</textarea>
+      </font></span><br />
+    </p>
+  <p><span class="style2"><strong>(50) 2. Count the number of blank cells.</strong></span><br />
+    <span class="normal"><font color="#0000FF">
+      <textarea name="q2" cols="120" rows="3" id="q2">Number of blank cells:</textarea>
+    </font></span>    </p>
+  <p><br />
+    <span class="style2"><strong>(50) 3. Count the number of nonblank cells.</strong></span><br />
+    <span class="normal"><font color="#0000FF">
+      <textarea name="q3" cols="120" rows="3" id="q3">Number of non blank cells:</textarea>
+  </font></span></p>
+</div>
+<div class="Section1"></div>
+<hr />
+<p >
+  <o:p>Summing Cells-Chapter 21 Problem 2 </o:p></p>
+
+  <p>Use the file Makeup.xlsx to answer this question:<br />
+    <strong>(50) 4. Use the SUMIF function to determine the total revenue earned before December 10, 2005</strong> </p>
+  <p class="normal"><span class="normal"><font color="#0000FF">
+    <textarea name="q4" cols="120" rows="3" id="q4">Total Revenue:</textarea>
+    </font></span></p>
+<hr />
+<p >
+  Offset-Chapter 22 Problem 1</p>
+<p  ><span class="style2"><strong>5. (<strong>50</strong>) </span></span></o:p><o:p> </o:p><o:p></o:p></span><span class="style2 style2"><o:p></o:p></span><span class="style2"><o:p></o:p><strong>
+<o:p>The file C21p1.xlsx supplies data about the units sold for 11 products during the years 1999&ndash;2003.<br />
+  Write a formula using the MATCH (refer to Chapter 5) and OFFSET functions that picks up the sales of a given product during a given year.</o:p></strong></span><span class="style6"><o:p></o:p></span><span class="style2"><o:p><br />
+  <span class="normal"><font color="#0000FF">
+  <textarea name="q5" cols="120" rows="3" id="q5">Formula:</textarea>
+  </font></span><br />
+</o:p></span></p>
+<div class="Section19">
+  <hr />
+</div>
+<p >Indirect-Chapter 23 Problem 2</p>
+<div class="Section117">
+  <p class="style2"><strong>6. (50) The workbook P23_2.xlsx contains data for the sales of five products in four regions (East, West, North, and South).<br />
+    Use the INDIRECT function to create formulas that enable you to easily add up the total sales of any combination of consecutively numbered products, such as Products 1&ndash;3, Products 2&ndash;5, and the like.<br />
+    Paste the forumla below:
+    </strong></p>
+</div>
+<div class="Section110">
+  <p class="normal"><font color="#0000FF">
+    <textarea name="q6" cols="120" rows="3" id="q6">Indirect formula:
+</textarea>
+    <br />
+    </font></p>
+</div>
+<div class="Section1">
+  <hr />
+  <p class="normal">Conditional Formatting-Chapter 24 Problem 1</p>
+  <p class="normal"> Using the data in the file SandP.xlsx, use conditional formatting in the following situations:</p>
+  <div class="Section118">
+    <p class="normal">Format in bold each month in which the value of the S&amp;P increased and underline each month in which the value of the S&amp;P decreased.</p>
+    <p class="normal">Highlight in green each month in which the S&amp;P changed by at most 2 percent.</p>
+    <p class="normal">Highlight the largest S&amp;P value in red and the smallest value in purple.</p>
+    </div>
+  <div class="Section111"> </div>
+  <div class="Section15">
+    <table   border="2" cellpadding="2" cellspacing="2">
+      <tr>
+        <td  valign="top">(<strong>50</strong>) 7. Make ascreenshot of Conditional Formating Rules Manager dialog box for the S&amp;P values, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+        </tr>
+      </table>
+    <hr />
+  </div>
+</div>
+<div class="Section11">
+  <h3 class="normal">Conditional Formatting-Chapter 24 Problems 11, 12, 13</h3>
+
+  <p class="normal">The file Nbasalaries.xlsx contains salaries of NBA players in millions of dollars. <br />
+    Set up    data bars to summarize this data.<br />
+Players making less than $1 million should have the    shortest data bar, and players making more than $15 million should have largest data    bar.<br />
+  </p>
+  <table   border="2" cellpadding="2" cellspacing="2">
+    <tr>
+      <td  valign="top"> (<strong>50</strong>) 8. Make ascreenshot of Conditional Formating showing the data bars, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+    </tr>
+  </table>
+  <hr />
+  <p class="normal"> Set up a three-color scale to summarize the NBA salary data. <br />
+    Change the color of the    bottom 10 percent of all salaries to green and the top 10 percent to red.<br />
+  </p>
+  <table   border="2" cellpadding="2" cellspacing="2">
+    <tr>
+      <td  valign="top"> (<strong>50</strong>) 9. Make ascreenshot of Conditional Formating showing the three color scale, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+    </tr>
+  </table>
+  <hr />
+  <p class="normal">Using the data in the file NBASalaries.xlsx, use five icons to summarize the NBA Player salary data.<br />
+    Create break points at $3 million, $6 million, $9 million and $12 million.
+    <br />
+    Use five colored arrows for the icon sets.
+  </p>
+  <div class="Section111"></div>
+  <div class="Section15">
+    <table   border="2" cellpadding="2" cellspacing="2">
+      <tr>
+        <td  valign="top"> (<strong>50</strong>) 10. Make ascreenshot of Conditional Formating showing the first few cells, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details. </td>
+      </tr>
+    </table>
+    <hr />
+  </div>
+  <div class="Section1">
+    <div class="Section15">
+      <hr />
+    </div>
+  </div>
+  <div class="Section11">
+    <p class="normal">Tables-Chapter 25 Problem 7</p>
+    <p class="normal">(<strong>50</strong>) Use the data in the file NikeData.xlsx, which contains quarterly sales revenues for Nike.<br />
+      Create a table, named 'NikeData'<br />
+      Choose an appropriate format.<br />
+      Create a chart, 2-d columnar.</p>
+    <p class="normal">Add the following data:<br />
+    </p>
+    <table width="45%" border="1">
+      <tr>
+        <td>Year/quarter</td>
+        <td>Revenue</td>
+      </tr>
+      <tr>
+        <td>2001 1</td>
+        <td>3000</td>
+      </tr>
+      <tr>
+        <td>2001 2</td>
+        <td>3100</td>
+      </tr>
+      <tr>
+        <td>2001 3</td>
+        <td>3200</td>
+      </tr>
+      <tr>
+        <td>2001 4</td>
+        <td>3800</td>
+      </tr>
+    </table>
+    <br />
+    <div class="Section15">
+      <table  border="2" cellpadding="2" cellspacing="2">
+        <tr>
+          <td valign="top"> (<strong>50</strong>) 11. Make ascreenshot of Conditional Formating showing the table and the 2-d columnar graph depicting the new data entered, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+          </tr>
+        </table>
+      <hr />
+    </div>
+  </div>
+  <p class="normal">Controls-Chapter 26 Problem 1, spin buttons</p>
+  <p class="normal"> Add a spin button to the car NPV example (NPVspinners.xlsx) that allows the tax rate to vary between 30 and 50 per cent.</p>
+  <table   border="2" cellpadding="2" cellspacing="2">
+    <tr>
+      <td  valign="top"> (<strong>50</strong>) 12. Make ascreenshot of the tax rate spinner control set to 34 percent, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+    </tr>
+  </table>
+  <hr />
+  <h3>Chapter 35-Array Formulas and Functions</h3>
+	<p>
+  
+  (<strong>100</strong>) 13. Use the workbook <a href="ArrayProblem.xlsx">ArrayProblem.xlsx</a><br />
+  Enter an array formula in cell D11 that will calculate the grand total wages owed. <br />
+Do not create any intermediate formulas.<br />
+
+<input type="text" name="q13" id="q13" size="50" maxlength="50" value="Grand Total Wages: " />
+</p>
+  
+  
+  
+	</div>
+			</div>
+  <hr />
+
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+
+
+			<p>
+				Create a .pdf file named &#39;ScreenShots.pdf&#39; by combining the above screenshots.
+			</p>
+
+			<p>
+				Refer to <a href="../Formative00/Formative00.html" class="bg-info text-white" target="_blank"  >Formative00</a> and either:<br />
+				Method 1- use File Explorer to drag all screenshots into a blank Word document, and print the document as 
+				&#39;screenshots.pdf&#39;<br />
+				or <br />
+				Method 2- use File Explorer to select all screenshots, righ click and select 
+				&#39;Print&#39; and print the document as &#39;screenshots.pdf&#39;
+			</p>
+
+
+			<p>
+				Save your file 'ScreenShots.pdf' to the ' 
+                 
+				<code><span id="kPath"></span></code>
+				<script>document.getElementById("kPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+
+			<p><strong>(50)</strong> 14. Upload your file 'ScreenShots.pdf' to the D2L 'Summative03' Assignment folder.</p>
+
+			<div class="text-danger">
+				<h2>Screenshots.pdf</h2>
+			</div>
+			<hr />
+
+
+	</div>
+   
+
+		<p>&nbsp;</p>
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+               
+				<br />
+				Ensure that you have linked this assignment on your home page.
+                Note that any screenshots do not have to be completed to perform this step.<br>
+			</p>
+
+			<p>
+
+			<strong>(50)</strong> 15. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br /></p>
+
+			<p>
+
+			<strong>(50)</strong> 16. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.<br />
+</p>
+
+
+			<p><strong>(200)</strong> 17. Also upload your file 'Summative03.xlsx' to the D2L 'Summative03' Assignment folder.</p>
+
+			<div class="text-danger">
+				<h2>Summative03.xlsx</h2>
+
+			</div>
+
+			
+		<hr />
+
+</div>
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
