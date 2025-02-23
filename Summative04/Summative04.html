@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+
+<!-- 
+	PgP 7/5/2022 adding back form and report exercises 
+-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
+	<script src="../constants.js"></script>
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS462Summative04</title>
+</head>
+
+<body class="container-fluid" onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">Data Analysis & Business Modeling<br />
+            Chapters 27, 30, 31, 37, 38, 40, 42, 46 </h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative04" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			1150 Points
+           
+			<hr />
+		</div>
+
+
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+
+
+			<p>After completing this assignment you will be able to <strong>use</strong> a spreadsheet application to</p>
+			<ul>
+				<li>work with data </li>
+                <li>visualize data</li>
+			</ul>
+			<p>The exercises in this assignment should be done in the order presented.</p>
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+		<div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+		<hr />
+
+		<div id="Overview" class="collapse in  col-lg-12">
+    Do all of these problems in a single Excel Workbook.<br>
+    Solve each problem on a separate Worksheet.<br>
+    Your Excel File must be setup like you did in Formative01 with appropriate-Worksheet tab names like Ch39P3<br />
+                     <br>
+			<p>
+				Create and Save your work in an Excel file '<strong>Summative04.xlsx</strong>' in your 
+               
+				<code><span id="iPath"></span></code>
+				<script>document.getElementById("iPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+			<hr />
+
+		</div>
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercises</a></div>
+        <p>&nbsp;</p>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+
+
+  <p align="left">Importing Data-Chapter 27</p>
+<p align="left"><strong>use the file Lineupsch33.docx<br />
+This file is located in the StudentDataFiles folders.<br/><br />
+  <span class="style2">1. (50) Once you have imported the  doc file into Excel (hint: refer to the book for details), column H lists time played in minutes with a prefix of 'm'. <br />
+    Create a formula for column K that strips out the 'm' suffix and converts the text to a number.</span></strong><br />
+  <span class="normal"><font color="#0000FF">
+    <textarea name="q1" id="q1" cols="100" rows="3">Enter formula here:</textarea>
+  </font></span>
+  <o:p><span class="normal"><font color="#0000FF">
+  </font></span></o:p></p>
+  <hr />
+<p >Internet Import-Chapter 40 </p>
+<p > The URL <br />
+    <a
+href="https://www.bea.gov/">https://www.bea.gov</a> <br />
+      contains a wealth of data about U.S. economics, such as the gross domestic product (GDP) in the United States.<br /> 
+    You can import and work with this data in Excel.<br />
+  Use this file concerning <a href="TruckOutput.xlsx">US truck production</a>. </p>
+  <table   border="2" cellpadding="2" cellspacing="2">
+    <tr>
+      <td valign="top"> (<strong>50</strong>) 2. Make ascreenshot of your imported data, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+    </tr>
+  </table>  
+  <p class="style2"><strong>(50) 3. Make a brief list of three (3) things you can learn from the GDP data. Hint: graph the GDP data on a per quarter basis for all quarters/years!</strong></p>
+  <p>
+    <textarea name="q3" id="q3" cols="120" rows="5" value="1. <br> 2. <br> 3. <br> "></textarea>
+  </p>
+  <hr />
+<p >Validating Data-Chapter 37 Problem 3 </p>
+<p  >4. (<strong>50</strong>) The List option in the group of data validation settings enables you to generate an error message if a value that is not included in a list is entered in the cell range you're validating.<br /> 
+  Suppose you are entering employee first names in the cell range A1:A10.<br /> 
+  The only employees of the company are Jen, Greg, Vivian, Jon, and John.<br /> 
+  Use the List option to ensure that no one misspells a first name.<br />
+  This problem is done by using a blank worksheet, you supply the necessary data.
+</p>
+
+  <table  border="2" cellpadding="2" cellspacing="2">
+    <tr>
+      <td  valign="top"> (<strong>50</strong>) 5. Make ascreenshot of the Data Validation Dialog Box, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+    </tr>
+  </table>
+
+  <hr />
+
+<p >Histograms-Chapter 30 Problem 1 </p>
+6. (<strong>50</strong>) 
+  Use the data in Stock.xlsx to construct histograms for monthly returns on GE and Intel (INTC).
+  <table   border="2" cellpadding="2" cellspacing="2">
+      <tr>
+        <td  valign="top"> (<strong>50</strong>) 7. Make ascreenshot of the GE histogram, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+      </tr>
+    </table>
+    <hr />
+</div>
+  </div>
+
+  <p >Descriptive Statistics-Chapter 31 Problem 1  </p>
+  <p>8. (<strong>50</strong>) Use the data in the file Stock.xlsx to generate Descriptive Statistics for Intel and GE stock.<br /> 
+  </p>
+    
+  <table  border="2" cellpadding="2" cellspacing="2">
+      <tr>
+        <td  valign="top"> (<strong>50</strong>) 9. Make ascreenshot of the Intel results table, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+      </tr>
+    </table>
+  <p class="style2"><strong>10. (50) Use Descriptive Statistics to calculate the mean of the GE stock price:</strong></p>
+  <input type="text" name="q10"  id="q10" value="GE stock price mean: " size="120" maxlength="120"/> 
+  </div>
+<font color="#0000FF">
+</font>
+<hr />
+<p>Pivot Tables-Chapter 38 Problem 4 </p>
+<p>You will find the data in  the file Hospital.xlsx</p>
+<div class="style2">
+  <p><strong >You have been assigned to evaluate the quality of care given to heart attack patients at Emergency Room (ER) and Chicago Hope (CH).<br />
+    For the last month you are given the data for:
+</strong></p>
+  <ul>
+    <li><strong>Hospital (ER or CH)</strong></li>
+    <li><strong>Risk (high or low) high risk people are less likely to survive.</strong></li>
+    <li><strong>Patient outcome (live or die)</strong></li>
+  </ul>
+  <p><strong>Using this data determine which hospital did a better job of caring for heart attack patients.<br />
+  Use all the data.</strong></p>
+  <p > <strong>(50) 11. Hospital doing better job:</strong><br />
+       <input type="text" name="q11"  id="q11" value="Better hospital: " size="120" maxlength="120"/> 
+  </p>
+  <p ><strong>(50) 12. Your explanation of why this hospital is doing a better job.</strong><br />
+    <input type="text" name="q12"  id="q12" value="Brief explanation: " size="120" maxlength="120"/> 
+    </p>
+  <hr />
+  </div>
+
+  <p>Sparklines-Chapter 46 Problem 2</p>
+  <p>The data <strong>Dow.xlsx</strong> contains the values of the Dow Jones Index for January 2&ndash;August 10, 2010. <br />
+    Create a line sparkline to show the ups and downs of the market.<br />
+</p>
+  <table   border="2" cellpadding="2" cellspacing="2">
+    <tr>
+      <td  valign="top">(<strong>50</strong>) 13. Make ascreenshot of the Sparklines cell, save it in a convenient location as you will combine it into one pdf file when you complete this assignment. <br />
+          <a href="../../Formative/Formative00/Formative00.asp">Refer to Assignment Formative00, Exercise 7</a> for details.</td>
+    </tr>
+  </table>
+<hr /><br />
+<p>Database Functions-Chapter 42 Problem 5 (partial)</p>
+<p class="style2"><strong>Use the data in the file makeupdb.xlsx to determine the following:</strong></p>
+<p class="style2"><strong>(50) 14. Total unit sales in the Midwest
+    <input name="q14" id="q14" type="text" size="25" value="unit sales total: " />
+</strong></p>
+<p class="style2"><strong>(50) 15. Total units that Heather sold in the East: 
+    <input name="q15" id="q15" type="text"  size="25" value="units sold: " />
+</strong></p>
+<p class="style2"><strong>(50) 16. Total units that Heather sold or that were sold in the East: 
+    <input name="q16" id="q16" type="text"  size="25" value="units sold: " />
+</strong></p>
+
+
+
+
+
+  <hr />
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+
+
+			<p>
+				Create a .pdf file named &#39;ScreenShots.pdf&#39; by combining the above screenshots.
+			</p>
+
+			<p>
+				Refer to <a href="../Formative00/Formative00.html" class="bg-info text-white" target="_blank"  >Formative00</a> and either:<br />
+				Method 1- use File Explorer to drag all screenshots into a blank Word document, and print the document as 
+				&#39;screenshots.pdf&#39;<br />
+				or <br />
+				Method 2- use File Explorer to select all screenshots, righ click and select 
+				&#39;Print&#39; and print the document as &#39;screenshots.pdf&#39;
+			</p>
+
+
+			<p>
+				Save your file 'ScreenShots.pdf' to the ' 
+                 
+				<code><span id="kPath"></span></code>
+				<script>document.getElementById("kPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+
+			<p><strong>(50)</strong> 14. Upload your file 'ScreenShots.pdf' to the D2L 'Summative04' Assignment folder.</p>
+
+			<div class="text-danger">
+				<h2>Screenshots.pdf</h2>
+			</div>
+			<hr />
+
+
+	</div>
+   
+
+		<p>&nbsp;</p>
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+               
+				<br />
+				Ensure that you have linked this assignment on your home page.
+                Note that any screenshots do not have to be completed to perform this step.<br>
+			</p>
+
+			<p>
+
+			<strong>(50)</strong> 15. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br /></p>
+
+			<p>
+
+			<strong>(50)</strong> 16. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.<br />
+</p>
+
+
+			<p><strong>(200)</strong> 17. Also upload your file 'Summative04.xlsx' to the D2L 'Summative04' Assignment folder.</p>
+
+			<div class="text-danger">
+				<h2>Summative04.xlsx</h2>
+
+			</div>
+
+			
+		<hr />
+
+</div>
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
