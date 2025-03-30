@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+
+<!-- 
+	PgP 7/5/2022 adding back form and report exercises 
+-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap -->
+	<link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+	<!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
+	<script src="../constants.js"></script>
+	<script src="../../ReadOnly/CourseConstants.js"></script>
+
+	<!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+	<title>MIS462Summative08</title>
+</head>
+
+<body class="container-fluid" onload="setVariables()">
+
+	<form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+		<input name="InstID" id="InstID" value="00617282" type="hidden">
+
+		<h1 class=" text-center">Excel Power Programming<br />
+            Chapters 3 to 7
+         </h1>
+
+		<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="FirstName">First Name:</label>
+				<input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="LastName">Last Name:</label>
+				<input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="pin">StarID:</label>
+				<input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="email">Email:</label>
+				<input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="row col-lg-12">
+			<div class="col-lg-3">
+				<label class="text-primary" for="semester">Semester:</label>
+				<input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="class">Class:</label>
+				<input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="section">Section:</label>
+				<input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+			</div>
+			<div class="col-lg-3">
+				<label class="text-primary" for="assignment">Assignment:</label>
+				<input class="form-control" name="assignment" id="assignment" value="Summative08" type="text" readonly="readonly">
+			</div>
+		</div>
+		<!-- -end-Student, class and assignment information-end -->
+
+		<!-- Calculate the correct path for saving the files -->
+		<script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+		<div class="col-lg-12 h3 text-danger">
+			700 Points
+           
+			<hr />
+		</div>
+
+
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+
+
+			<p>After completing this assignment you will be able to <strong>use</strong> Microsoft Excel to</p>
+			<ul>
+				<li>plan a spreadsheet application</li>
+                <li>record macros</li>
+				<li>research information on macros</li>
+				<li>understand VBA elements and functions</li>
+				<li>control code execution</li>
+			</ul>
+			<p>The exercises in this assignment should be done in the order presented.</p>
+			<hr />
+		</div>
+		<!-- -end-objectives-end -->
+
+		<div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+		<hr />
+
+		<div id="Overview" class="collapse in  col-lg-12">
+    Do all of these problems in a single Excel Workbook.<br>
+    Solve each problem on a separate Worksheet.<br>
+    Your Excel File must be setup like you did in Formative01 with appropriate-Worksheet tab names like Ch5P3<br />
+                     <br>
+			<p>
+				Create and Save your work in a <strong>macro-enabled</strong> Excel file '<strong>Summative08.xlsm</strong>' in your 
+               
+				<code><span id="iPath"></span></code>
+				<script>document.getElementById("iPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+			<hr />
+
+		</div>
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercises</a></div>
+        <p>&nbsp;</p>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+
+
+    <p align="left">Before beginning this homework, you are strongly advised to first read Chapters 3 to 7.</p>
+            <p align="left"><br />
+  </p>
+
+
+
+
+
+
+  <h2 align="center"><em>Chapter 3 Programming Fundamentals</em></h2>
+  <p align="left"><strong><span class="style2">(50) 1. Briefly describe the difference in these three VBA statements:</span></strong><br />
+    <code> Dim X as Integer = 300<br />
+    Const X as Integer = 300<br />
+    Dim X(300) as Integer</code> <br />
+    <textarea name="q1" id="q1" cols="120" rows="5"></textarea>
+  </p>
+  <p align="left"><strong><span class="style2">(50) 2. Briefly describe the purpose of the VBA &quot;UCase&quot; function. Hint/note: this is not to be confused with the Excel 'Upper' function!<br />
+  </span></strong>
+    <textarea name="q2" id="q2" cols="120" rows="3"></textarea>
+</p>
+  <p align="left"><strong><span class="style2">(50) 3. Below write the construct used to perform an action on all objects in a collection.</span></strong><br />
+<textarea name="q3" id="q3" cols="120" rows="5"></textarea>
+</p>
+  <p align="left"><strong><span class="style2">(50) 4. Briefly describe the difference between a 'Do-While' and a 'For-Next' loop. <br />
+    In other words, how do you decide to use one or the other?</span></strong><br />
+<textarea name="q4" id="q4" cols="120" rows="3"></textarea>
+<br />
+  </p>
+  <hr />
+  <hr />
+  <h2 align="center"><em>Chapter 4 Sub Procedures</em></h2>
+  <p align="left">Review this chapter, pay special attention to the development of the worksheet sorting application.</p>
+  <p align="left" class="style2"><strong>(100) 5. Develop a sub procedure &quot;Sub WorksheetCount&quot;.<br />
+  This sub procedure must:</strong></p>
+  <ul>
+    <li class="style2"><strong> count the number of worksheets in the current workbook and displays a message box stating this fact.</strong></li>
+    <li class="style2"><strong>uses a keyboard shortcut of Ctrl+Shift+C</strong></li>
+    <li class="style2"><strong>if there is not an active worksheet perform error handling<br />
+      <br />
+      Copy and paste your code below.
+    </strong></li>
+  </ul>
+  <p>
+    <textarea name="q5" id="q5" cols="120" rows="19"></textarea>
+  </p>
+  <hr />
+  <hr />
+  <h2 align="center"><em>Chapter 5 Function Procedures</em></h2>
+<p>User Defined Functions</p>
+<p class="style2"><strong>(50) 6. Create a user defined function that returns the cosine of a random number.<br />
+  Paste your function in the space provided below.</strong></p>
+<p>
+  <textarea name="q6" id="q6" cols="120" rows="5"></textarea>
+</p>
+<hr />
+<hr />
+<h2 align="center"><em>Chapter 7 Programming Examples and Techniques</em></h2>
+<p>Working with Ranges</p>
+<p class="style2"><strong>(50) 7. (see pages 242-243) Modify the code for the 'Select By Value.xlsm' worksheet to select cell values that are greater than 100.<br />
+  Make sure to add the macro and worksheet to your Summative08.xlsm file.
+</strong></p>
+<p class="style2"><strong>Paste your modified code below. Do not provide the entire code module, just the modified line(s).</strong></p>
+<p>
+  <textarea name="q7" id="q7" cols="120" rows="5"></textarea>
+</p>
+<hr />
+
+
+
+
+
+</div>
+  <hr />
+	</div>
+
+
+
+   
+
+		<p>&nbsp;</p>
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+               
+				<br />
+				Ensure that you have linked this assignment on your home page.
+                Note that any screenshots do not have to be completed to perform this step.<br>
+			</p>
+
+			<p>
+
+			<strong>(50)</strong> 8. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br /></p>
+
+			<p>
+
+			<strong>(50)</strong> 9. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.<br />
+</p>
+
+
+			<p><strong>(200)</strong> 10. Also upload your file 'Summative08.xlsm' to the D2L 'Summative08' Assignment folder.</p>
+
+			<div class="text-danger">
+				<h2>Summative08.xlsm</h2>
+
+			</div>
+
+			
+		<hr />
+
+</div>
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+	</form>
+
+
+	<!-- Creative Commons License Info -->
+	<div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+	<div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="../../ReadOnly/jquery-1.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
